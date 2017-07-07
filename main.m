@@ -36,7 +36,8 @@ for i = 1:max_int
   %er             %f(x)
   %norm(direcao)  %|p_i^GN|
   
-  passo = armijo(func,w,x,d,er,gradiente,direcao)
+  %passo = armijo(func,w,x,d,er,gradiente,direcao);
+  
   %atualizacao
   w =w+ passo*direcao;
   
