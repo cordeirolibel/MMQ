@@ -2,7 +2,7 @@
 %>>>>>> Gustavo Cordeiro Libel - UTFPR - 2017 <<<<<<<<%
 %-----------------------------------------------------%
 
-function passo =  armijo(func,w,x,d,er,grad,direc)
+function passo =  armijo(func,x,t,d,er,grad,direc)
 
 gama = 0.8;
 eta = 0.25;
@@ -13,7 +13,7 @@ function [y] = func_aux(passo)
 end
 
 function [y] = phi(passo)
-  r = erro(func,w+passo*direc,x,d);
+  r = erro(func,x+passo*direc,t,d);
   y = sum((r.*r)/2);
 end
 

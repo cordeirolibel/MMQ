@@ -2,19 +2,19 @@
 %>>>>>> Gustavo Cordeiro Libel - UTFPR - 2017 <<<<<<<<%
 %-----------------------------------------------------%
 
-% w in R4
+% x in R4
 
-function y = func2(w, x, ordem = 0)
+function y = func2(x, t, ordem = 0)
   
   if ordem == 0
-    y = w(1).*sin(w(2).*x+w(3))+w(4);
+    y = x(1).*sin(x(2).*t+x(3))+x(4);
   elseif ordem == 1 %gradiente
     %df(w)/dw1
-    y(1,:) = sin(w(2).*x+w(3));
+    y(1,:) = sin(x(2).*t+x(3));
     %df(w)/dw2
-    y(2,:) = w(1).*(cos(w(2).*x+w(3))).*x;
+    y(2,:) = x(1).*(cos(x(2).*t+x(3))).*t;
     %df(w)/dw3
-    y(3,:) = w(1).*cos(w(2).*x+w(3));
+    y(3,:) = x(1).*cos(x(2).*t+x(3));
     %df(w)/dw4
     y(4,:) = 1;
   else
